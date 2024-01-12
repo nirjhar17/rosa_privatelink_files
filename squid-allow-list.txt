@@ -1,0 +1,45 @@
+# https://docs.openshift.com/rosa/rosa_install_access_delete_clusters/rosa_getting_started_iam/rosa-aws-prereqs.html#osd-aws-privatelink-firewall-prerequisites
+# install
+registry.redhat.io
+quay.io
+*.quay.io
+sso.redhat.com
+quay-registry.s3.amazonaws.com
+cm-quay-production-s3.s3.amazonaws.com
+cart-rhcos-ci.s3.amazonaws.com
+openshift.org
+registry.access.redhat.com
+console.redhat.com
+sso.redhat.com
+pull.q1w2.quay.rhcloud.com
+*.q1w2.quay.rhcloud.com
+# telemetry
+cert-api.access.redhat.com
+api.access.redhat.com
+infogw.api.openshift.com
+console.redhat.com
+observatorium.api.openshift.com
+# aws
+ec2.amazonaws.com
+events.amazonaws.com
+iam.amazonaws.com
+route53.amazonaws.com
+sts.amazonaws.com
+tagging.us-east-1.amazonaws.com
+ec2.{{ aws_region }}.amazonaws.com
+elasticloadbalancing.{{ aws_region }}.amazonaws.com
+*.s3.dualstack.{{ aws_region }}.amazonaws.com
+*.s3.{{ aws_region }}.amazonaws.com
+# openshift
+mirror.openshift.com
+storage.googleapis.com/openshift-release
+api.openshift.com
+# red hat sre
+api.pagerduty.com
+events.pagerduty.com
+api.deadmanssnitch.com
+nosnch.in
+*.osdsecuritylogs.splunkcloud.com
+http-inputs-osdsecuritylogs.splunkcloud.com
+sftp.access.redhat.com
+*.ocp-on-aws.sadiqueonline.com
