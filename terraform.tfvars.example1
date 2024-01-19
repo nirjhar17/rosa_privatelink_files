@@ -1,0 +1,14 @@
+create_vpc=false
+create_account_roles=true
+create_operator_roles=true
+cluster_name="njajodia6-prv"
+multi_az=true
+aws_region="us-east-1"
+vpc_cidr_block="10.15.0.0/16"
+aws_subnet_ids=["subnet-0974bf7d834e6b18a","subnet-008c7d9213f3af8f7","subnet-0c4bfa07d723d520a"]
+rosa_openshift_version="4.14.6"
+proxy = {
+   http_proxy = "http://ip-10-16-2-201.ec2.internal:3128"
+   https_proxy = "http://ip-10-16-2-201.ec2.internal:3128"
+}
+private_cluster = true
