@@ -1,0 +1,60 @@
+URLS_TO_VALIDATE="https://registry.redhat.io
+https://quay.io
+https://cdn01.quay.io
+https://cdn02.quay.io
+https://cdn03.quay.io
+https://sso.redhat.com
+https://quay-registry.s3.amazonaws.com
+https://ocm-quay-production-s3.s3.amazonaws.com
+https://quayio-production-s3.s3.amazonaws.com
+https://cart-rhcos-ci.s3.amazonaws.com
+https://openshift.org
+https://registry.access.redhat.com
+https://registry.connect.redhat.com
+https://console.redhat.com
+https://pull.q1w2.quay.rhcloud.com
+https://www.okd.io
+https://www.redhat.com
+https://aws.amazon.com
+https://catalog.redhat.com
+https://cert-api.access.redhat.com
+https://api.access.redhat.com
+https://infogw.api.openshift.com
+https://console.redhat.com
+https://cloud.redhat.com/api/ingress
+https://observatorium-mst.api.openshift.com
+https://observatorium.api.openshift.com
+https://ec2.amazonaws.com
+https://events.ap-southeast-1.amazonaws.com
+https://iam.amazonaws.com
+https://route53.amazonaws.com
+https://sts.amazonaws.com
+https://sts.ap-southeast-1.amazonaws.com
+https://tagging.us-east-1.amazonaws.com
+https://ec2.ap-southeast-1.amazonaws.com
+https://elasticloadbalancing.ap-southeast-1.amazonaws.com
+https://servicequotas.ap-southeast-1.amazonaws.com
+https://tagging.ap-southeast-1.amazonaws.com
+https://mirror.openshift.com
+https://storage.googleapis.com/openshift-release
+https://api.openshift.com
+https://api.pagerduty.com
+https://events.pagerduty.com
+https://api.deadmanssnitch.com
+https://nosnch.in
+https://http-inputs-osdsecuritylogs.splunkcloud.com"
+ 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+for i in ${URLS_TO_VALIDATE}
+do 
+	echo "========== Verifying URL $i"
+	curl -s --output /dev/null ${i}
+        if [ $? -eq 0 ]
+	then
+        	printf "${GREEN}SUCCESS${NC}\n"
+	else
+		printf "${RED}FAIL${NC}\n"
+	fi
+done
