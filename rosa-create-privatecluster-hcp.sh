@@ -1,3 +1,57 @@
+#This policy contains the least privilege permissions required to create, manage, and delete ROSA clusters and roles in AWS.
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RosaClusterAndRoleManagement",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:ListRoleTags",
+        "iam:ListRoles",
+        "iam:ListAttachedRolePolicies",
+        "iam:AttachRolePolicy",
+        "iam:UpdateAssumeRolePolicy",
+        "iam:TagRole",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:DetachRolePolicy",
+        "iam:ListInstanceProfilesForRole",
+        "iam:ListRolePolicies",
+        "iam:GetPolicy",
+        "iam:CreatePolicy",
+        "iam:DeletePolicy",
+        "iam:ListPolicyTags",
+        "iam:ListPolicyVersions",
+        "iam:ListOpenIDConnectProviders",
+        "iam:TagOpenIDConnectProvider",
+        "iam:CreateOpenIDConnectProvider",
+        "iam:DeleteOpenIDConnectProvider",
+        "elasticloadbalancing:DescribeAccountLimits",
+        "servicequotas:ListServiceQuotas",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeAvailabilityZones",
+        "s3:CreateBucket",
+        "s3:PutObject",
+        "s3:PutBucketTagging",
+        "s3:PutBucketPolicy",
+        "s3:PutObjectTagging",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:ListBucket",
+        "s3:DeleteObject",
+        "s3:DeleteBucket",
+        "secretsmanager:CreateSecret",
+        "secretsmanager:TagResource",
+        "secretsmanager:DeleteSecret"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
 #!/bin/bash
 echo "===== Logging in using ROSA Token ====="
 rosa login --token={{ rosa_token }}
